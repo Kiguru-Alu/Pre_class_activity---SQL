@@ -1,6 +1,7 @@
 
--- STUDENT PERFORMANCE DB (ALU Rwanda)
+-- Group Coding Lab 27
 -- Tracks student grades in Linux and Python courses
+
 
 -- 1. Create Database
 DROP DATABASE IF EXISTS student_performance_db;
