@@ -1,16 +1,14 @@
--- ======================================================
--- STUDENT PERFORMANCE DATABASE (ALU Rwanda)
+
+-- STUDENT PERFORMANCE DB (ALU Rwanda)
 -- Tracks student grades in Linux and Python courses
--- ======================================================
 
 -- 1. Create Database
 DROP DATABASE IF EXISTS student_performance_db;
 CREATE DATABASE student_performance_db;
 USE student_performance_db;
 
--- ======================================================
 -- 2. Create Tables
--- ======================================================
+
 
 -- Table: students
 CREATE TABLE students (
@@ -37,10 +35,9 @@ CREATE TABLE python_grades (
     FOREIGN KEY (student_id) REFERENCES students(student_id)
 );
 
--- ======================================================
--- 3. Insert Sample Data
+
 -- At least 15 students, with some taking one or both courses
--- ======================================================
+
 
 INSERT INTO students (student_name, intake_year) VALUES
 ('Alice Johnson', 2023),
@@ -85,9 +82,9 @@ INSERT INTO python_grades (student_id, grade_obtained) VALUES
 (14, 72.0),
 (15, 95.0);
 
--- ======================================================
+
 -- 4. Queries
--- ======================================================
+
 
 -- Q1: Find students who scored less than 50% in the Linux course
 SELECT s.student_id, s.student_name, l.grade_obtained
@@ -130,6 +127,3 @@ GROUP BY s.student_id, s.student_name
 ORDER BY overall_avg DESC
 LIMIT 1;
 
--- ======================================================
--- END OF FILE
--- ======================================================
